@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 62.5%;
+}
+body{
+  background-color: #ffefea;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+h1{
+  text-align: center;
+}
+.container{
+  margin: auto;
+  padding: 2rem;
+}
+.btn{
+  cursor: pointer;
+  background-color: darksalmon;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+}
+.btn:active{
+  transform: scale(0.98);
+}
+.btn:focus, select:focus{
+  outline: none;
+}
+.btn-toggle{
+  display: block;
+  margin: 2rem auto;
+}
+.text-box{
+  width: 70%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -80rem);
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  transition: all 1s ease-in-out;
+}
+.text-box.active{
+  transform: translate(-50%, 0);
+}
+.text-box select{
+  background-color: darksalmon;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 3rem;
+}
+.text-box textarea{
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  padding: 0.8rem;
+  width: 100%;
+  height: 15rem;
+  resize: vertical;
+}
+.text-box textarea:focus{
+  border: 2px solid darksalmon;
+  outline: none;
+}
+.text-box .btn{
+  width: 100%;
+}
+.text-box .close{
+  float: right;
+  cursor: pointer;
+}
+main{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+.box{
+  box-shadow: 0 2px 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-out;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+.box.active{
+  box-shadow: 0 0 1rem 0.5rem darksalmon;
+}
+.box img{
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+.box .info{
+  background-color: darksalmon;
+  color: #fff;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  text-align: center;
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  main{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  main{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  main{
+    grid-template-columns: 1fr;
+  }
+}
